@@ -1,0 +1,66 @@
+ <div class="container-fluid seller-info">
+        <div class="row">
+            <div class="col-xs-3 seller-photo"><img src="{{saller.photo}}">
+            </div>
+            <div class="row col-xs-9">
+                <p class="col-xs-12 seller-name seller-block_mark-text" ng-bind="saller.name"></p>
+                <p class="col-xs-12 seller-profession seller-block_info-text" ng-bind="saller.profession"></p>
+                <div class="col-xs-12 seller-about well" ng-bind="saller.about">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-4 col-sm-8 seller-info-services">
+                <div class="col-xs-12">
+                    <div class="col-xs-10"></div>
+                    <div class="col-xs-2 seller-block_info-text">Услуги</div>
+                </div>
+                <div class="col-xs-12" ng-repeat="servis in saller.services">
+                       <div class="col-xs-10">
+                        <div class="progress ">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:{{saller.setProgressBar(servis.done,saller.services,'done')}}% ; background:{{saller.setProgressBarBackground()}}">
+                                {{servis.label}}
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2" ng-bind="servis.done"></div>
+                </div>
+                <div class="col-xs-12 seller-block_mark-text">
+                    <div class="col-xs-10">Всего</div>
+                    <div class="col-xs-2" ng-bind="saller.sumServicesDone()"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid seller-reviews">
+        <div class="row">
+            <div class="col-xs-4 seller-block_mark-text">Последние отзывы</div>
+            <div class="col-xs-4"><a>Все отзывы</a>
+            </div>
+            <div class="col-xs-4">
+                {{saller.like}} <span class="glyphicon  glyphicon-heart-empty"></span> {{saller.share}} <span class="glyphicon glyphicon-comment"></span>
+            </div>
+        </div>
+        <div class="row" ng-repeat="commentator in saller.commentators">
+            <div class="col-xs-12">
+                <span class="seller-block_mark-text" ng-bind="commentator.name"></span>
+                <span class="seller-block_info-text" ng-bind="commentator.date"></span>
+
+            </div>
+            <div class="col-xs-12">
+                <div class="bubble well" ng-bind="commentator.comment"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid-fluid seller-reviews-add">
+            <div class="row">
+                <div class="col-xs-12 well-lg">
+                    <textarea class="form-control"  cols="30" rows="10" ng-model="newComments" ng-keyDown="addCommentWithCntrEnt($event)"></textarea>
+                </div>
+                <div class="col-xs-12 text-center">
+                    <button class="btn btn-lg  seller-reviews-add_button well seller-block_mark-text" ng-click="saller.addCommentators()" >Написать консультанту</button>
+                </div>
+            </div>
+        </div>
+

@@ -1,0 +1,102 @@
+.seller-block {
+    font-family: "Arial";
+}
+.seller-block_mark-text{
+    font-weight: bold;
+    font-size: 16px;
+}
+.seller-block_info-text {
+    color:#cacaca;
+}
+.seller-block>.seller-info>div>.seller-photo{
+    z-index: 999999;
+}
+.seller-block>.seller-info>div>.seller-photo>img{
+    float: right;
+}
+.seller-block>.seller-info>div>div>p{
+    margin-bottom: 0px;
+}
+.seller-block>.seller-info>div>div>.seller-name { 
+}
+
+.seller-block>.seller-info>div>div>.seller-profession{ 
+}
+.seller-block>.seller-info>div>div>.seller-about{
+    background-color: #fffbc8;
+    border: 2px solid #cacaca;
+    border-radius: 5px;
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+    position: relative;
+    left: -2em;
+}
+.seller-block>.seller-info>div>.seller-info-services>:first-child,
+.seller-block>.seller-info>div>.seller-info-services>div:last-child {
+    margin: 2%;
+}
+.seller-block>.seller-info>div>.seller-info-services>div:first-child {
+    border-bottom: 2px solid #cccccc;
+}
+.seller-block>.seller-info>div>.seller-info-services>div:last-child {
+    border-top: 2px solid #cccccc;
+}
+
+.seller-reviews-add{
+    background: #f2f2f2;
+}
+.seller-reviews-add_button{
+     width: 50%;
+    border-radius: 20px;
+    background: #fdd639;
+}
+.bubble {
+    background: #f2fbff;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    border-radius: 13px;
+    margin: 1%;
+}
+
+.bubble:before {
+    content: '';
+    position: relative;
+    border-style: solid;
+    border-width: 0 15px 15px;
+    border-color: #f2fbff transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    top: -2em;
+    left: 40px;
+}
+
+@media (max-width:500px ){
+    .seller-block>.seller-info>div>.seller-photo{
+        width: 100%;
+        text-align: center;
+    }
+    .seller-block>.seller-info>div>.seller-photo>img{
+        float:none;
+    }
+    .seller-block>.seller-info>div>div>.seller-about{
+    position: inherit;
+    left: 0px;
+    }
+    .seller-block>.seller-info>div>div{
+        width: 100%;
+        text-align: center;
+    }
+    
+    .seller-block_mark-text{
+        font-size: 14px;
+        white-space: normal;
+    }
+    body{
+        font-size:12px;
+
+    }
+}
+
+
+
